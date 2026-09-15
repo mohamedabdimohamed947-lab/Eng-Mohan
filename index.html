@@ -1,27 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moha's Website</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Networking | Moha</title>
 
+</head>
 <body>
 
-    <nav>
-        <h2>Moha</h2>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-    </nav>
+<nav>
+  <h2>MOHA | NETWORKING</h2>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="#topics">Topics</a>
+    <a href="#labs">Labs</a>
+    <a href="#security">Security</a>
+  </div>
+</nav>
 
-    <section class="hero">
-        <h1>Welcome to Moha's Website</h1>
-        <p>This website is created by Moha.</p>
-        <button onclick="showMessage()">Click Me</button>
-    </section>
+<header class="hero">
+  <h1>Advanced <span>Networking</span></h1>
+  <p>
+    A practical learning page about VLANs, inter-VLAN routing, OSPF, ACLs,
+    NAT, VPNs, Layer 2 security and network troubleshooting.
+  </p>
+  <a class="btn" href="#topics">Explore Topics</a>
+</header>
 
-    <script src="script.js"></script>
+<section id="topics">
+  <div class="title">
+    <h2>Core Advanced Topics</h2>
+    <p>Build strong networking skills step by step.</p>
+  </div>
+
+  <div class="grid">
+    <article class="card">
+      <h3>VLAN & Trunking</h3>
+      <p>Segment a LAN into logical networks and carry multiple VLANs over an 802.1Q trunk.</p>
+    </article>
+
+    <article class="card">
+      <h3>Inter-VLAN Routing</h3>
+      <p>Allow different VLANs to communicate through router subinterfaces or a Layer 3 switch.</p>
+    </article>
+
+    <article class="card">
+      <h3>OSPF</h3>
+      <p>Study link-state routing, neighbors, areas, metrics and route troubleshooting.</p>
+    </article>
+
+    <article class="card">
+      <h3>ACL</h3>
+      <p>Control traffic by matching addresses, protocols and ports to permit or deny packets.</p>
+    </article>
+
+    <article class="card">
+      <h3>NAT & PAT</h3>
+      <p>Translate private addresses to public addresses and understand inside/outside interfaces.</p>
+    </article>
+
+    <article class="card">
+      <h3>VPN</h3>
+      <p>Learn how encrypted connections can extend network access securely across untrusted networks.</p>
+    </article>
+  </div>
+</section>
+
+<section id="security">
+  <div class="title">
+    <h2>Network Security</h2>
+    <p>Protect the network by controlling access and reducing unnecessary traffic.</p>
+  </div>
+
+  <div class="grid">
+    <article class="card">
+      <h3>Port Security</h3>
+      <p>Limit which MAC addresses can use a switch port and understand violation modes.</p>
+    </article>
+
+    <article class="card">
+      <h3>DHCP Snooping</h3>
+      <p>Learn how switches can distinguish trusted DHCP sources from untrusted ports.</p>
+    </article>
+
+    <article class="card">
+      <h3>VACL / VLAN Security</h3>
+      <p>Use VLAN-based controls to restrict traffic inside network segments.</p>
+    </article>
+
+    <article class="card">
+      <h3>Firewall & ACL</h3>
+      <p>Use traffic filtering as one layer of defense for sensitive network resources.</p>
+    </article>
+  </div>
+</section>
+
+<section id="labs">
+  <div class="title">
+    <h2>Practical Cisco Lab</h2>
+    <p>Example commands to practice in Cisco Packet Tracer.</p>
+  </div>
+
+  <div class="lab">
+    <h3>Basic VLAN + Trunk Example</h3>
+    <code>
+enable
+configure terminal
+
+vlan 10
+name STUDENTS
+
+vlan 20
+name STAFF
+
+interface gigabitEthernet 0/1
+switchport mode trunk
+switchport trunk allowed vlan 10,20
+
+end
+show vlan brief
+show interfaces trunk
+    </code>
+  </div>
+
+  <br>
+
+  <div class="lab">
+    <h3>Useful Troubleshooting Commands</h3>
+    <code>
+show ip interface brief
+show running-config
+show vlan brief
+show interfaces trunk
+show ip route
+show ip ospf neighbor
+ping 192.168.10.1
+traceroute 8.8.8.8
+    </code>
+  </div>
+</section>
+
+<section>
+  <div class="title">
+    <h2>My Networking Goal</h2>
+    <p>Learn → Practice → Troubleshoot → Secure → Build real networks.</p>
+  </div>
+
+  <div class="card">
+    <ul>
+      <li>Understand network architecture.</li>
+      <li>Configure routers and switches.</li>
+      <li>Practice VLANs, routing and ACLs.</li>
+      <li>Build labs with Cisco Packet Tracer.</li>
+      <li>Develop strong network-security skills.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Moha | Advanced Networking Learning Website</p>
+</footer>
+<script src="script.js"></script>
 </body>
 </html>
